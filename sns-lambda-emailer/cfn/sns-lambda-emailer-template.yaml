@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation template for sns-lambda-emailer.
+Type: AWS::SNS::Topic
+Resources:
+#=============================================================================
+# SNS
+#=============================================================================
+  #---------------------------------------------------------------------------
+  # Topic
+  #---------------------------------------------------------------------------
+  SnsTpcSnsLambdaEmailer:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: "Experimental Mailer"
+      FifoTopic: False
+      TopicName: "sns-lambda-emailer-topic"
+      Subscription:
+        - Endpoint: "email"
+          Protocol: "gatarn1229@gmail.com"
